@@ -1,0 +1,5 @@
+# Optional: only needed for the real-CKKS validation and depth probes
+# (validate_depth_model.py, validate_ckks.py, probe_decomposition.py, probe_ops.py).
+# CPU only. The search itself does not need it.
+-r requirements.txt
+tenseal

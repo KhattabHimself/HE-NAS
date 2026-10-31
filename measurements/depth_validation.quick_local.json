@@ -1,0 +1,109 @@
+{
+  "calibration": [
+    {
+      "label": "1x square",
+      "architecture": [
+        "Conv8_3_square"
+      ],
+      "measured": 2,
+      "corrected": 2,
+      "original": 1,
+      "match": true,
+      "n_primes": 4,
+      "poly_degree": 8192,
+      "total_bits": 200,
+      "security_bits": 139.52,
+      "rel_error": 9.38840547445924e-07,
+      "latency_ms": 12.557500042021275
+    },
+    {
+      "label": "1x relu4",
+      "architecture": [
+        "Conv8_3_relu4"
+      ],
+      "measured": 4,
+      "corrected": 4,
+      "original": 2,
+      "match": true,
+      "n_primes": 6,
+      "poly_degree": 16384,
+      "total_bits": 280,
+      "security_bits": 200.22857142857143,
+      "rel_error": 4.995982333172887e-06,
+      "latency_ms": 40.680899983271956
+    },
+    {
+      "label": "2x square",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_square"
+      ],
+      "measured": 4,
+      "corrected": 4,
+      "original": 2,
+      "match": true,
+      "n_primes": 6,
+      "poly_degree": 16384,
+      "total_bits": 280,
+      "security_bits": 200.22857142857143,
+      "rel_error": 2.3901632550669535e-05,
+      "latency_ms": 58.023600024171174
+    },
+    {
+      "label": "3x square",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_square",
+        "Conv8_3_square"
+      ],
+      "measured": 6,
+      "corrected": 6,
+      "original": 3,
+      "match": true,
+      "n_primes": 8,
+      "poly_degree": 16384,
+      "total_bits": 360,
+      "security_bits": 155.73333333333332,
+      "rel_error": 6.266799330121991e-05,
+      "latency_ms": 105.11469998164102
+    },
+    {
+      "label": "relu4, square",
+      "architecture": [
+        "Conv8_3_relu4",
+        "Conv8_3_square"
+      ],
+      "measured": 6,
+      "corrected": 6,
+      "original": 3,
+      "match": true,
+      "n_primes": 8,
+      "poly_degree": 16384,
+      "total_bits": 360,
+      "security_bits": 155.73333333333332,
+      "rel_error": 2.543337660558424e-05,
+      "latency_ms": 92.3470999696292
+    },
+    {
+      "label": "square, 2x relu4",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_relu4",
+        "Conv8_3_relu4"
+      ],
+      "measured": 10,
+      "corrected": 10,
+      "original": 5,
+      "match": true,
+      "n_primes": 12,
+      "poly_degree": 32768,
+      "total_bits": 520,
+      "security_bits": 216.86153846153846,
+      "rel_error": 1.56519600895562e-05,
+      "latency_ms": 476.4496000716463
+    }
+  ],
+  "champions": [],
+  "slots": 1024,
+  "tenseal_version": "0.3.16"
+}

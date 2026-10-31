@@ -1,0 +1,13 @@
+# HE-NAS runtime dependencies (Python 3.10+).
+#
+# On DRAC (Digital Research Alliance of Canada), do NOT pip-install from PyPI.
+# Use the pre-built wheelhouse instead (see README.md / submit.sh):
+#   pip install --no-index torch torchvision numpy scipy
+#
+# On a laptop / generic cloud VM, install normally:
+#   pip install -r requirements.txt
+# (For a CUDA GPU, install the CUDA build of torch first; see pytorch.org.)
+torch
+torchvision
+numpy
+scipy

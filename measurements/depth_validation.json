@@ -1,0 +1,370 @@
+{
+  "calibration": [
+    {
+      "label": "1x square",
+      "architecture": [
+        "Conv8_3_square"
+      ],
+      "measured": 2,
+      "corrected": 2,
+      "original": 1,
+      "match": true,
+      "n_primes": 4,
+      "poly_degree": 8192,
+      "total_bits": 200,
+      "security_bits": 139.52,
+      "rel_error": 9.386732199906301e-07,
+      "latency_ms": 7.21681909635663
+    },
+    {
+      "label": "1x relu4",
+      "architecture": [
+        "Conv8_3_relu4"
+      ],
+      "measured": 4,
+      "corrected": 4,
+      "original": 2,
+      "match": true,
+      "n_primes": 6,
+      "poly_degree": 16384,
+      "total_bits": 280,
+      "security_bits": 200.22857142857143,
+      "rel_error": 4.994025503950687e-06,
+      "latency_ms": 35.07373807951808
+    },
+    {
+      "label": "2x square",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_square"
+      ],
+      "measured": 4,
+      "corrected": 4,
+      "original": 2,
+      "match": true,
+      "n_primes": 6,
+      "poly_degree": 16384,
+      "total_bits": 280,
+      "security_bits": 200.22857142857143,
+      "rel_error": 2.3908374419425943e-05,
+      "latency_ms": 41.64716834202409
+    },
+    {
+      "label": "3x square",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_square",
+        "Conv8_3_square"
+      ],
+      "measured": 6,
+      "corrected": 6,
+      "original": 3,
+      "match": true,
+      "n_primes": 8,
+      "poly_degree": 16384,
+      "total_bits": 360,
+      "security_bits": 155.73333333333332,
+      "rel_error": 6.267415252109668e-05,
+      "latency_ms": 89.07769713550806
+    },
+    {
+      "label": "relu4, square",
+      "architecture": [
+        "Conv8_3_relu4",
+        "Conv8_3_square"
+      ],
+      "measured": 6,
+      "corrected": 6,
+      "original": 3,
+      "match": true,
+      "n_primes": 8,
+      "poly_degree": 16384,
+      "total_bits": 360,
+      "security_bits": 155.73333333333332,
+      "rel_error": 2.5436122147244557e-05,
+      "latency_ms": 84.6579922363162
+    },
+    {
+      "label": "square, 2x relu4",
+      "architecture": [
+        "Conv8_3_square",
+        "Conv8_3_relu4",
+        "Conv8_3_relu4"
+      ],
+      "measured": 10,
+      "corrected": 10,
+      "original": 5,
+      "match": true,
+      "n_primes": 12,
+      "poly_degree": 32768,
+      "total_bits": 520,
+      "security_bits": 216.86153846153846,
+      "rel_error": 1.5650031128961704e-05,
+      "latency_ms": 438.1464906036854
+    }
+  ],
+  "champions": [
+    {
+      "experiment": "ge_cifar10",
+      "architecture": [
+        "Conv128_3_relu4",
+        "Conv256_3_relu4",
+        "Conv256_5_square+Pool",
+        "Conv256_5_square"
+      ],
+      "accuracy": 0.8559,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 14,
+      "own_budget": 12,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 0.00019006135010828204,
+        "latency_ms": 782.7262640930712
+      }
+    },
+    {
+      "experiment": "nsga2_cifar10",
+      "architecture": [
+        "Conv256_3_relu4",
+        "Conv64_5_square+Pool",
+        "Conv128_5_relu4",
+        "Conv256_5_square+Pool"
+      ],
+      "accuracy": 0.8517,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 16,
+      "own_budget": 14,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 0.00012518797270788195,
+        "latency_ms": 732.657662127167
+      }
+    },
+    {
+      "experiment": "ablation_cifar10/hard_noelit",
+      "architecture": [
+        "Conv256_3_relu4",
+        "Conv64_5_relu4+Pool",
+        "Conv256_3_square+Pool",
+        "Conv256_5_square+Pool"
+      ],
+      "accuracy": 0.8501,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 14,
+      "own_budget": 12,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 0.0001900695185076771,
+        "latency_ms": 717.9651586338878
+      }
+    },
+    {
+      "experiment": "ablation_cifar10/hard_elit",
+      "architecture": [
+        "Conv32_3_relu4",
+        "Conv128_5_relu4+Pool",
+        "Conv256_5_relu4+Pool",
+        "Conv256_3_square+Pool"
+      ],
+      "accuracy": 0.8368,
+      "corrected_need": 14,
+      "original_need": 7,
+      "own_chain_len": 17,
+      "own_budget": 15,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 14,
+        "n_primes": 16,
+        "poly_degree": 32768,
+        "total_bits": 680,
+        "security_bits": 165.83529411764707,
+        "rel_error": 7.534971288602978e-05,
+        "latency_ms": 940.6059784814715
+      }
+    },
+    {
+      "experiment": "seq_ckks_first_cifar10",
+      "architecture": [
+        "Conv128_3_relu4",
+        "Conv256_5_square+Pool",
+        "Conv256_5_square+Pool"
+      ],
+      "accuracy": 0.8332,
+      "corrected_need": 8,
+      "original_need": 4,
+      "own_chain_len": 10,
+      "own_budget": 8,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 8,
+        "n_primes": 10,
+        "poly_degree": 32768,
+        "total_bits": 440,
+        "security_bits": 256.2909090909091,
+        "rel_error": 9.343656851678591e-05,
+        "latency_ms": 307.27913742884994
+      }
+    },
+    {
+      "experiment": "ablation_cifar10/soft_noelit",
+      "architecture": [
+        "Conv128_3_relu4",
+        "Conv128_3_relu4+Pool",
+        "Conv128_3_relu4+Pool",
+        "Conv256_5_square"
+      ],
+      "accuracy": 0.8033,
+      "corrected_need": 14,
+      "original_need": 7,
+      "own_chain_len": 19,
+      "own_budget": 17,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 14,
+        "n_primes": 16,
+        "poly_degree": 32768,
+        "total_bits": 680,
+        "security_bits": 165.83529411764707,
+        "rel_error": 7.537456778893416e-05,
+        "latency_ms": 954.8953822813928
+      }
+    },
+    {
+      "experiment": "b3_expert_provisioned",
+      "architecture": [
+        "Conv32_3_relu4+Pool",
+        "Conv64_3_relu4+Pool",
+        "Conv128_3_relu4+Pool"
+      ],
+      "accuracy": 0.7513,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 14,
+      "own_budget": 12,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 1.142840067555855e-05,
+        "latency_ms": 670.3246403485537
+      }
+    },
+    {
+      "experiment": "b4_expert_naive",
+      "architecture": [
+        "Conv32_3_relu4+Pool",
+        "Conv64_3_relu4+Pool",
+        "Conv128_3_relu4+Pool"
+      ],
+      "accuracy": 0.7513,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 8,
+      "own_budget": 6,
+      "feasible_as_evolved": false,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 1.1427757580620902e-05,
+        "latency_ms": 655.2960001863539
+      }
+    },
+    {
+      "experiment": "seq_arch_first_cifar10",
+      "architecture": [
+        "Conv64_3_square",
+        "Conv128_3_square",
+        "Conv128_3_square"
+      ],
+      "accuracy": 0.7173,
+      "corrected_need": 6,
+      "original_need": 3,
+      "own_chain_len": 8,
+      "own_budget": 6,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 6,
+        "n_primes": 8,
+        "poly_degree": 16384,
+        "total_bits": 360,
+        "security_bits": 155.73333333333332,
+        "rel_error": 6.267440086250027e-05,
+        "latency_ms": 93.0015635676682
+      }
+    },
+    {
+      "experiment": "random_search_cifar10",
+      "architecture": [
+        "Conv256_3_square",
+        "Conv256_5_relu4+Pool",
+        "Conv128_5_relu4+Pool",
+        "Conv64_3_square"
+      ],
+      "accuracy": 0.2236,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 15,
+      "own_budget": 13,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 8.338492812929515e-05,
+        "latency_ms": 707.2416637092829
+      }
+    },
+    {
+      "experiment": "ablation_cifar10/soft_elit",
+      "architecture": [
+        "Conv256_5_square+Pool",
+        "Conv128_3_relu4+Pool",
+        "Conv256_3_relu4",
+        "Conv128_3_square"
+      ],
+      "accuracy": 0.1001,
+      "corrected_need": 12,
+      "original_need": 6,
+      "own_chain_len": 17,
+      "own_budget": 15,
+      "feasible_as_evolved": true,
+      "repaired": {
+        "usable_levels": 12,
+        "n_primes": 14,
+        "poly_degree": 32768,
+        "total_bits": 600,
+        "security_bits": 187.94666666666666,
+        "rel_error": 8.338893525248698e-05,
+        "latency_ms": 719.6312388405204
+      }
+    }
+  ],
+  "slots": 1024,
+  "tenseal_version": "0.3.17"
+}
